@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#universidad-centroamericana-josé-simeón-cañas">Universidad Centroamericana José Simeón Cañas</a></li>
+<li><a href="#ciclo-012023-laboratorio">Ciclo 01/2023, Laboratorio:</a>
+<ul>
+<li></li>
+<li><a href="#creacion-de-la-maquina-virtual">creacion de la maquina virtual:</a></li>
+<li><a href="#servidor-web">Servidor WEB</a></li>
+<li><a href="#configuración-de-un-servidor-web">Configuración de un Servidor Web</a></li>
+<li><a href="#¿qué-es-un-servidor-ftp">¿Qué es un Servidor FTP?</a></li>
+<li><a href="#servidor-proxy">Servidor Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="universidad-centroamericana-josé-simeón-cañas">Universidad Centroamericana José Simeón Cañas</h1>
+<div align="center"><img src="https://uca.edu.sv/wp-content/uploads/2016/06/LogoUCA-negro-bajo-peso.jpg" width="200">`
+</div><h1 id="ciclo-012023-laboratorio">Ciclo 01/2023, Laboratorio:</h1>
+<h3 id="catedrática-elisa-aldana">Catedrática: Elisa Aldana</h3>
+<h3 id="antiguo-cuscatlan">2023, Antiguo Cuscatlan</h3>
+<p>¿Qué es el DNS?<br>
+El Sistema de Nombres de Dominio o DNS es un sistema de nomenclatura jerárquico que se ocupa de la administración del espacio de nombres de dominio (Domain Name Space). Su labor primordial consiste en resolver las peticiones de asignación de nombres.</p>
+<p>El proceso de solución de DNS supone convertir un nombre de servidor (como <a href="http://www.ejemplo.com">www.ejemplo.com</a>) en una dirección IP compatible con el ordenador (como 192.168.1.1). Se da una dirección IP a cada dispositivo en Internet, y esa dirección será necesaria para encontrar el dispositivo apropiado de Internet, al igual que se usa la dirección de una calle para encontrar una casa concreta.</p>
+<p>El sistema de nombres de dominio recurre a una red global de servidores DNS, que, a su vez, divide el espacio de nombres en zonas administradas de forma independiente las unas de las otras. Esto habilita la gestión descentralizada de la información de los dominios.</p>
+<p>¿Qué es un servidor DNS?<br>
+Un servidor DNS, también conocido como servidor de nombres, consiste en un software para servidores que recurre a la base de datos de un DNS para responder a las peticiones que guardan relación con el espacio de nombres de dominio. Como, por regla general, se alojan en hosts dedicados, también se denominan así a los ordenadores que albergan estos programas. Suele hacerse una diferenciación entre servidores DNS primarios y secundarios:</p>
+<ol>
+<li>Servidor primario, principal o maestro: se denomina a un servidor DNS primario o maestro cuando guarda la información sobre una zona determinada del espacio de nombres de dominio en su propia base de datos.</li>
+<li>Servidor secundario o esclavo: cuando la información de un servidor de nombres no procede de los archivos de zona propios, sino que son de segunda o de tercera mano, este servidor se convierte en secundario o esclavo para esta información.</li>
+</ol>
+<p>Esta situación se produce cuando un servidor no puede resolver una petición con su propia base de datos y ha de recurrir a la información disponible en otro servidor de nombres (resolución recursiva).</p>
+<h2 id="creacion-de-la-maquina-virtual">creacion de la maquina virtual:</h2>
+<div align="center"><img src="https://upload.wikimedia.org/wikipedia/en/7/7d/VMware_Player_logo.png" width="100">`
+</div><p>abrimos vm ware y damos click en crear nueva maquina virtual</p>
+<p>click en instaler disk image iso, y en browser buscamos nuestra imagen iso, alojada en el escritorio</p>
+<p>dejamos el nombre por defecto</p>
+<p>tamaño por defeccto(20GB)</p>
+<p>lo siguiente es la informacion de nuestra maquina viertual, y damos click en finish</p>
+<p>La máquina virtual se iniciará desde la imagen ISO que seleccionó y podrá comenzar la instalación del sistema operativo.</p>
+<h3 id="configuración-de-la-maquina-virtual">configuración de la maquina virtual</h3>
+<p>seleccionamos idioma ingles</p>
+<p>click en continue without updating</p>
+<p>click en done, dejaremos el teclado en ingles</p>
+<p>verificamos que solamente este marcado Ubuntu server</p>
+<p>anotamos la ip que s enos muestra, la usaremos mas adelante</p>
+<p>dejamos en blanco el proxy addres</p>
+<p>cambiamos SV por CO, esto debido a que utilizareemos el servidor de colombia</p>
+<p>nos aseguramos que esten marcadas estas opciones</p>
+<p>click en done</p>
+<p>click en continue</p>
+<p>Para fines prácticos del laboratorio, completamos el formulario con los siguientes datos:</p>
+<pre><code>Name: uca
+server name: uca
+username: laboredes03
+password: 12345
+</code></pre>
+<p>dejamos marcado skip for now</p>
+<p>instalamos ssh</p>
+<p>no marcamos ninguna de las opciones de la lista</p>
+<p>comenzara la actualizacion, tomara unos minutos, pero solo daremos click cuando nos diga reboot now</p>
+<h2 id="servidor-web">Servidor WEB</h2>
+<p>Un servidor web (server) es un ordenador de gran potencia que se encarga de “prestar el servicio” de transmitir la información pedida por sus clientes (otros ordenadores, dispositivos móviles, impresoras, personas, etc.)<br>
+Los servidores web (web server) son un componente de los servidores que tienen como principal función almacenar, en web hosting, todos los archivos propios de una página web (imágenes, textos, videos, etc.) y transmitirlos a los usuarios a través de los navegadores mediante el protocolo HTTP (Hipertext Transfer Protocol) y HTTPS</p>
+<p>Tipos de servidores Web<br>
+Servidor HTTP Apache El servidor HTTP Apache es un software de código abierto y gratuito, que durante años ha sido el software más utilizado por los servidores web, rivalizando actualmente con Nginx.<br>
+Además destaca por ser multiplataforma, siendo compatible con sistemas operativos como Linux, Window, IOS, Unix, etc. Servidor Nginx Al igual que con Apache estaríamos ante un software de código abierto y multiplataforma compatible con Window, IOS, Linux, etc. Tiene una versión de pago además de la gratuita. Este tipo de servidor web es conocido por su buen funcionamiento cuando tiene que gestionar un número alto de visitas simultáneas, ya que los usuarios no perciben retraso en la carga de la página aunque se esté produciendo ese acceso concurrente.</p>
+<p>Actualmente es el software para servidores web más usado en el mundo.<br>
+<strong>LiteSpeed</strong><br>
+LiteSpeed nació como sustituto de Apache, para mejorar el rendimiento del servidor web en<br>
+entornos de alto tráfico.<br>
+Tiene una versión gratuita y otra de pago al igual que Nginx.<br>
+LiteSpeed puede ser utilizado como reemplazo directo de Apache, ya que ofrece compatibilidad<br>
+con los archivos .htaccess y las aplicaciones web diseñadas para Apache.<br>
+En la actualidad los tests de rendimiento no señalan una mejora al respecto de Nginx.<br>
+<strong>Servidor Microsoft IIS</strong><br>
+Este tipo de servidor web está desarrollado por Microsoft y, en el caso de que se necesite<br>
+integrar herramientas de Microsoft, sería una alternativa recomendable por la compatibilidad<br>
+que obtendríamos.<br>
+Se ejecuta con Windows gracias a la tecnología IIS (Internet Information Services) y es<br>
+compatible con páginas programadas en ASP (Active Server Pages) o .NET, a diferencia del<br>
+resto de servidores web compatibles con Linux.<br>
+<strong>Sun Java System Web Server</strong><br>
+Este tipo de servidor está pensado para programadores que trabajan con Java, Python o Ruby.<br>
+Es un servidor web creado para soportar una gran carga de trabajo con tecnologías muy<br>
+específicas como Java.<br>
+Si no se dispone de conocimientos avanzados en administración de sistemas no sería una opción<br>
+recomendada.</p>
+<h2 id="configuración-de-un-servidor-web">Configuración de un Servidor Web</h2>
+<p>Se trabajara con apache, Mariadb y php<br>
+Creación de la máquina virtual con la versión de Ubuntu 22.04<br>
+1- Creación de la máquina virtual con la versión de Ubuntu 22.04</p>
+<div align="center"><img src="./img_67.png" width="800">
+</div><p>2- Instalamos el siguiente repositorio</p>
+<div align="center"><img src="./img_68.png" width="800">
+</div><p>3- Actualizamos toda la distribución. Con sudo apt update</p>
+<div align="center"><img src="./img_69.png" width="800">
+</div><p>4- Instalaremos los paquetes para trabajar con apache, mariadb y php</p>
+<div align="center"><img src="./img_70.png" width="800">
+</div><p>5- Después revisaremos el estado de apache y de mariadb con el siguiente comando</p>
+<div align="center"><img src="./img_71.png" width="800">
+</div><p>6- Mostrará la siguiente pantalla</p>
+<div align="center"><img src="./img_72.png" width="800">
+</div><p>7- En el firewall permitiremos las conexiones al protocolo http y https</p>
+<div align="center"><img src="./img_73.png" width="800">
+</div><p>8- Para trabajar con php modificaremos el archivo php.ini, en el cual habilitaremos las opciones de mostrar errores, de la siguiente manera:</p>
+<div align="center"><img src="./img_74.png" width="800">
+</div><p>9- Dentro del archivo buscaremos las líneas que contengan<br>
+Display_errors = Off y display_startup_errors = Off y cambiaremos los Off por On.<br>
+Después guardaremos el archivo</p>
+<div align="center"><img src="./img_75.png" width="800">
+</div><p>10- Reiniciaremos el servicio de apache para que sean efectivos los cambios</p>
+<div align="center"><img src="./img_76.png" width="800">
+</div><p>11- Modificaremos también el archivo php.ini pero el se encuentra en la carpeta cli y haremos la misma modificación Display_errors = Off y display_startup_errors = Off y cambiaremos los Off por On.<br>
+Después guardaremos el archivo</p>
+<div align="center"><img src="./img_77.png" width="800">
+<div align="center"><img src="./img_78.png" width="800">
+</div></div><p>12- Reiniciamos el servicio de apache</p>
+<div align="center"><img src="./img_79.png" width="800">
+</div><p>13- Instalación de mariadb, con sudo mysql y para salirse de la consola de mariadb solo se digita exit.</p>
+<div align="center"><img src="./img_80.png" width="800">
+</div><p>14- Para ver el funcionamiento vamos a crear un pequeño archivo en php, que nos dé información</p>
+<div align="center"><img src="./img_81.png" width="800">
+</div><p>15- A dicho archivo agregaremos esta única línea.</p>
+<div align="center"><img src="./img_82.png" width="800">
+</div><p>16- Instalaremos w3m</p>
+<div align="center"><img src="./img_83.png" width="800">
+</div><p>17- Digitemos las siguientes direcciones</p>
+<div align="center"><img src="./img_84.png" width="800">
+</div><p>18- Que mostrará lo siguientes datos de php</p>
+<div align="center"><img src="./img_85.png" width="800">
+</div><p>19- Y la siguiente dirección para ver los datos de apache</p>
+<div align="center"><img src="./img_86.png" width="800">
+</div><div align="center"><img src="./img_87.png" width="800">
+</div><h2 id="¿qué-es-un-servidor-ftp">¿Qué es un Servidor FTP?</h2>
+<p>Como ya mencionamos antes, el llamado servidor FTP es un software que corre en los servidores conectados a Internet (o bien a una red local LAN), y tiene como función primordial permitir que diferentes clientes FTP puedan conectarse a él, para luego descargar o subir información (archivos).<br>
+En una conexión FTP siempre interviene un servidor FTP, pues sin éste nunca podría accederse a los archivos para interactuar con ellos (descarga, subir o eliminación de los mismos). Un elemento necesario para que un servidor FTP funcione es estar bajo una red TCP / IP, la cual estará conectada al servidor VPS, Cloud o Dedicado.</p>
+<p>¿Cuáles son los pros y los contras del FTP?<br>
+El FTP tiene algunos beneficios que es importante mencionar. Dado que ha estado en<br>
+funcionamiento durante mucho tiempo, la mayoría de la gente ya está familiarizada con el<br>
+protocolo, y hay muchas herramientas de escritorio, incluidos FileZilla, WinSCP, Cyberduck y más,<br>
+que hacen que sea razonablemente sencillo emplear FTP. También es importante señalar que el FTP<br>
+tiene algunas características útiles, como la posibilidad de transferir varios archivos al mismo<br>
+tiempo, la posibilidad de reanudar una transferencia si se pierde la conexión y la posibilidad de<br>
+programar las transferencias.<br>
+Sin embargo, hay una desventaja significativa asociada con el FTP: la falta de seguridad. El FTP<br>
+fue inventado en los años setenta y como tal, es anterior a muchas de las medidas de seguridad<br>
+cibernética en las que hemos llegado a confiar en el mundo moderno. No se lo diseñó para ser un<br>
+protocolo seguro y las transferencias FTP no están cifradas, lo que significa que tus contraseñas,<br>
+nombres de usuario y otros datos confidenciales pueden ser leídos con relativa facilidad por los<br>
+piratas informáticos que capturan tus paquetes de datos (es decir, a través de un ataque de captura<br>
+de paquetes).<br>
+Debido a estos agujeros de seguridad, el soporte para FTP viene disminuyendo y han llegado al<br>
+mercado una variedad de diferentes opciones de reemplazo, incluidas SFTP, HTTPS, AS2 y FTPS.<br>
+A partir de 2020, Google Chrome desactiva el FTP de forma predeterminada y Firefox lo eliminó<br>
+de su código.</p>
+<h3 id="configuración-servidor-ftp">Configuración Servidor FTP</h3>
+<ol>
+<li>Primeramente, se debe instalar el paquete vsftp con el comando “sudo apt-get install<br>
+vsftpd.”</li>
+</ol>
+<div align="center"><img src="./img_42.png" width="800">
+</div><ol start="2">
+<li>verificar que este corriendo el servicio de vsftp con el comando “systemctl status vsftpd”</li>
+</ol>
+<div align="center"><img src="./img_43.png" width="800">
+</div><ol start="3">
+<li>seguidamente abrir los puertos con el comando “sudo ufw allow 21/tcp”, “sudo ufw allow<br>
+20/tcp”, “sudo ufw allow 22/tcp”, “sudo ufw allow 990/tcp”, “sudo ufw allow 40000:50000/tcp”<br>
+y seguidamente ejecutar “sudo ufw status” “sudo ufw enable”</li>
+</ol>
+<div align="center"><img src="./img_44.png" width="800">
+</div><ol start="4">
+<li>seguidamente agregar un usuario con el comando “sudo adduser uca” (puede tener cualquier nombre)</li>
+</ol>
+<div align="center"><img src="./img_45.png" width="800">
+</div><ol start="5">
+<li>Seguidamente agregar los servicios de root a ese usuario con el siguiente comando “sudo chown<br>
+root:root /home/uca” (en caso que no se llame uca su usuario poner el nombre que le asignaron )</li>
+</ol>
+<div align="center"><img src="./img_46.png" width="800">
+</div><ol start="6">
+<li>crear una carpeta que servirá como directorio remoto para poder acceder al ftp y darle los permisos de root con los siguientes comandos</li>
+</ol>
+<div align="center"><img src="./img_47.png" width="800">
+</div><div align="center"><img src="./img_48.png" width="800">
+</div><ol start="7">
+<li>Acceder con un editor de texto a la carpeta “/bin/ftponly” y agregar “* : /bin/sh”</li>
+</ol>
+<div align="center"><img src="./img_49.png" width="800">
+</div><p>8.Acceder con un editor de texto a la carpeta “/etc/shells” y agregar “/bin/ftponly”</p>
+<div align="center"><img src="./img_50.png" width="800">
+</div><ol start="9">
+<li>Seguidamente asignarle al usuario el archivo de configuración que editamos anteriormente con el comando “sudo usermod uca -s /bin/ftponly” (si el nombre de su usuario es diferente colocar el que le asigno ejemplo: sudo usermod nombre asignado -s /bin/ftponly)</li>
+</ol>
+<div align="center"><img src="./img_51.png" width="800">
+</div><ol start="10">
+<li>con un editor de texto abrimos el archivo “/etc/vsftpd.conf” y des comentar las líneas 31,35,122 y agregar en la última línea lo siguiente: “allow_writeable_chroot=YES”</li>
+</ol>
+<div align="center"><img src="./img_52.png" width="800">
+<div align="center"><img src="./img_53.png" width="800">
+</div></div><ol start="11">
+<li>Ejecutar los siguientes comandos: “chmod 777 /home/uca” “chmod 777<br>
+/home/nombre de usuario de la maquina creada”</li>
+</ol>
+<div align="center"><img src="./img_54.png" width="800">
+</div><p>12.reiniciar los servicios de vsftp con el comando” sudo systemctl restart vsftpd” y verificar la ip de la maquina con el comando “ifconfig”</p>
+<div align="center"><img src="./img_55.png" width="800">
+</div><ol start="13">
+<li>comprobar que la configuración esta correcta con la aplicación FileZilla introduciendo la dirección ip de su máquina virtual, nombre de usuario, su contraseña y probar puerto 22</li>
+</ol>
+<div align="center"><img src="./img_56.png" width="800">
+14. mandar cualquier archivo de texto a nuestro servidor ftp es decir un archivo cualquiera de Windows a nuestra maquina virtual y acceder a la ruta en donde se mandó el doc.
+<div align="center"><img src="./img_57.png" width="800">
+</div></div><h2 id="servidor-proxy">Servidor Proxy</h2>
+<p>Un servidor proxy funciona como un intermediario entre un ordenador e internet. De esta<br>
+manera, la información de nuestra computadora llega al servidor y la solicitud sale<br>
+directamente de este al lugar de destino bloqueando la comunicación directa entre nuestro<br>
+dispositivo y el de destino. Esto tiene distintas utilidades según el tipo de proxy que<br>
+utilicemos.<br>
+Algunos tipos de servidores proxy<br>
+● Proxy web<br>
+Su principal uso es la conexión a internet ocultando nuestra IP, esto nos aporta un nivel de<br>
+privacidad y además nos permite acceder a sitios que puedan estar bloqueados en el país<br>
+desde el que realizamos la petición.<br>
+● Proxy inverso<br>
+Su función es ser un equilibrador de carga para servidores web. Cuando se realizan muchas<br>
+peticiones a un servidor web este se puede saturar generando un ataque DDoS (denegación de<br>
+servicio distribuida), el proxy recibe todo el tráfico y lo distribuye equilibradamente entre los<br>
+servidores web evitando el ataque. Se le llama “inverso” ya que protege al servidor de destino<br>
+en lugar del cliente.<br>
+● Proxy caché<br>
+Este sirve para almacenar el contenido al que accedemos en sitios web (como texto e<br>
+imágenes), de modo que si volvemos a visitar el sitio y el servidor encuentra que la web no<br>
+ha cambiado, muestra el contenido almacenado en el caché mejorando el tiempo de carga y<br>
+reduciendo el tráfico.<br>
+Ventajas y desventajas<br>
+Por un lado hemos visto que los servidores proxy dificultan el rastreo de nuestra red, nos<br>
+permite acceder a contenido bloqueado por empresas o entidades gubernamentales, mejora la<br>
+velocidad de navegación y ayuda ahorro de ancho de banda, e incluso permite establecer<br>
+reglas dentro de una red familiar o empresarial para bloquear el acceso de los usuarios a<br>
+algunos sitios web.<br>
+Por otro lado, utilizar un proxy implica agregar un intermediario más entre el cliente y la<br>
+información que desea obtener, lo cual puede ralentizar la conexión. Además, si estamos<br>
+utilizando un proxy gratuito corremos el riesgo de que contenga un malware, que no cifre<br>
+nuestra información e incluso que rastree nuestra actividad y la venda a terceros.</p>
+<h3 id="configuración-de-un-servidor-proxy">Configuración de un servidor proxy</h3>
+<p>Para esta práctica utilizaremos Squid, un proxy web-caché gratuito ampliamente utilizado<br>
+debido a su alta seguridad y gran cantidad de funciones.</p>
+<ol>
+<li>Iniciamos instalando squid con sudo apt install squid -y.</li>
+</ol>
+<div align="center"><img src="./img_89.png" width="800">
+2. Comprobamos que squid se encuentra activo con systemctl status squid.
+</div><div align="center"><img src="./img_90.png" width="800">
+</div><ol start="3">
+<li>Abrimos el puerto de squid en nuestro firewall con sudo ufw allow squid. Este puerto es el 3128, lo podemos encontrar en el archivo de configuración.</li>
+</ol>
+<div align="center"><img src="./img_91.png" width="800">
+</div><ol start="4">
+<li>Utilizamos sudo nano /etc/squid/sites403.acl para crear un archivo en el que ingresaremos<br>
+los sitios web que queremos que el proxy prohiba. La extensión acl significa lista de control de acceso (Access-Control List).</li>
+</ol>
+<div align="center"><img src="./img_92.png" width="800">
+</div><ol start="5">
+<li>Añadimos los sitios web que queremos prohibir con el siguiente formato<br>
+.&lt;dominio.&lt;extension</li>
+</ol>
+<div align="center"><img src="./img_93.png" width="800">
+</div><ol start="6">
+<li>Accedemos al archivo de configuración de squid con sudo nano /etc/squid/squid.conf.</li>
+</ol>
+<div align="center"><img src="./img_94.png" width="800">
+</div><ol start="7">
+<li>Al inicio del archivo añadimos las siguientes líneas:<br>
+acl sites403 dstdomain “/etc/squid/sites403.acl”<br>
+http_access deny sites403<br>
+Con esto le estamos indicando a squid que debe bloquear el acceso http a los sitios que se encuentran en el archivo que creamos.</li>
+</ol>
+<div align="center"><img src="./img_95.png" width="800">
+</div><ol start="8">
+<li>Reiniciamos el servicio con systemctl restart squid y nos pedirá ingresar nuestra contraseña.</li>
+</ol>
+<div align="center"><img src="./img_96.png" width="800">
+</div><ol start="9">
+<li>Ahora podemos intentar acceder a uno de los sitios web que bloqueamos con<br>
+curl -x <a href="http://localhost:3128">http://localhost:3128</a> -I &lt;sitio web<br>
+La opción -x indica que utilizaremos un proxy, -I se utiliza para devolver únicamente los<br>
+headers de la página. Aquí está una lista con todas las opciones que puede recibir el comando<br>
+curl.<br>
+Se nos muestra un error 403 que deniega el acceso.<br>
+Ahora vamos a asegurar el servidor añadiendo credenciales para ingresar a los sitios web.</li>
+</ol>
+<div align="center"><img src="./img_97.png" width="800">
+</div><ol start="10">
+<li>Realizamos sudo apt install apache2-utils.</li>
+</ol>
+<div align="center"><img src="./img_98.png" width="800">
+</div><ol start="11">
+<li>Ejecutamos sudo htpasswd -c /etc/squid/passwords  y nos pedirá crear una<br>
+contraseña la cual encriptará y guardará en el archivo de la ruta junto al usuario. No debemos<br>
+olvidar las credenciales ya que las utilizaremos más adelante.</li>
+</ol>
+<div align="center"><img src="./img_99.png" width="800">
+</div><ol start="12">
+<li>Podemos ejecutar sudo cat /etc/squid/passwords para leer el archivo.</li>
+</ol>
+<div align="center"><img src="./img_100.png" width="800">
+</div><ol start="13">
+<li>Volvemos al archivo de configuración con sudo nano /etc/squid/squid.conf y con Ctrl+W<br>
+buscaremos “INSERT” para localizar el siguiente apartado y añadiremos las siguientes líneas<br>
+como lo muestra la imagen:<br>
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwords<br>
+auth_param basic realm Squid Basic Authentication<br>
+acl auth_user proxy_auth REQUIRED<br>
+http_access allow auth_user<br>
+http_access allow localnet</li>
+</ol>
+<div align="center"><img src="./img_101.png" width="800">
+</div><ol start="14">
+<li>
+<p>Volvemos a reiniciar el servicio con systemctl restart squid.</p>
+</li>
+<li>
+<p>Intentamos acceder a un sitio web con curl -x <a href="http://localhost:3128">http://localhost:3128</a> -I <br>
+(opcionalmente podemos sustituir localhost por la ip de nuestra máquina como se muestra en<br>
+la imagen). Vemos que retorna un error 407 que indica que se necesita autenticación de<br>
+proxy.</p>
+</li>
+</ol>
+<div align="center"><img src="./img_102.png" width="800">
+</div><ol start="16">
+<li>Volvemos a ejecutar el comando agregando nuestro usuario y contraseña de squid antes de la<br>
+ip de la siguiente manera:<br>
+curl -x http://:&lt;contraseña&gt;@:3128 -I <br>
+Vemos que ahora nos devuelve un código 200 lo que significa que la solicitud ha sido<br>
+aceptada<br>
+NOTA: Es importante agregar el www en el sitio web, de lo contrario devolverá un error.</li>
+</ol>
+<div align="center"><img src="./img_103.png" width="800">
+</div>
+    </div>
+  </div>
+</body>
+
+</html>
